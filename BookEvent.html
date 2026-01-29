@@ -32,13 +32,11 @@
 
 <body id="page-top" class="regular-navigation">
 
-
     <div class="master-wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top fadeInDown" data-wow-delay="0.2s">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
                         <span class="sr-only">Toggle navigation</span>
@@ -49,7 +47,6 @@
                     <a class="navbar-brand smoothie" href="index.html">LANDO'S <span class="theme-accent-color">BARBEQUE</span></a>
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="about.html">About Us</a></li>
@@ -57,126 +54,110 @@
                         <li class="active"><a href="BookEvent.html">Book an Event</a></li>
                         <li><a href="index.html#reviews">Reviews</a></li>
                     </ul>
-
                 </div>
-                <!-- /.navbar-collapse -->         
-
             </div>
-            <!-- /.container-fluid -->
         </nav>
 
-        <!-- Book an Event section content moved from original index page -->
+        <!-- Book an Event -->
         <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg1.jpg" data-speed="0.8">
             <div class="section-inner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 text-center mb100">
+                        <div class="col-lg-12 text-center mb100" style="margin-top:90px;">
                             <h2 class="section-heading">Book <span class="theme-accent-color">an</span> Event</h2>
                             <hr class="thin-hr">
                             <h3 class="section-subheading secondary-font">Satisfaction, everytime.</h3>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row mb100"> 
-                        <!-- Address, Phone & Email -->
-                        <div class="col-md-5 col-md-offset-1 wow fadeIn">
-                            <h3 class="mb30">Address</h3>
-                            <p class="lead">Florence Building</p>
-                            <p class="lead">Kings Square<br>
-                            London, LDN1 23 </p>
-                            <p class="lead">+448754 658 048<br>
-                        </div>
 
-                        <div class="col-md-5 col-sm-7 wow fadeIn">
-                            <h3 class="mb30">Opening Times</h3>
-                            <div class="row">
-                              <div class="col-xs-5">
-                                <ul class="list-unstyled weekdays">
-                                  <li>Monday</li>
-                                  <li>Tuesday</li>
-                                  <li>Wednesday</li>
-                                  <li>Thursday</li>
-                                  <li>Friday</li>
-                                  <li>Saturday</li>
-                                  <li>Sunday</li>
-                                </ul>
-                              </div>
-                              <div class="col-xs-7">
-                                <ul class="list-unstyled">
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 11:00 PM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
-                                  <li>11:00 AM - 1:00 AM</li>
-                                </ul>
-                              </div>
-                            </div>
-                        </div>                
-                    </div>
+                
 
+                    <!-- FORM -->
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="row">
-                                <div id="message" class="col-md-12"></div>
-                                <form method="POST" action="https://formspree.io/f/xeekkqow" id="contactform" class="form-group main-contact-form col-md-12 wow fadeIn" data-wow-delay="0.2s">
-                                    <input type="hidden" name="_redirect" value="https://camjwebb.github.io/Landon---Copy--2-/BookEvent.html?success=true">
+                                <!-- IMPORTANT: no duplicate id="message" anywhere -->
+                                <div id="form-message" class="col-md-12"></div>
+
+                                <form method="POST"
+                                      action="https://formspree.io/f/xeekkqow"
+                                      id="bookEventForm"
+                                      class="form-group col-md-12 wow fadeIn"
+                                      data-wow-delay="0.2s">
+
+                                    <!-- Formspree redirect -->
+                                    <input type="hidden" name="_next" value="https://camjwebb.github.io/Landon---Copy--2-/BookEvent.html?success=true">
+
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="name" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Name:</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" name="name" id="name" required style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                                <input type="text" class="form-control" name="name" id="name" required
+                                                       style="background-color: #000; border: 2px solid #fff; color: #fff;" />
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="email" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Email:</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="email" class="form-control" name="email" id="email" required style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                                <input type="email" class="form-control" name="email" id="email" required
+                                                       style="background-color: #000; border: 2px solid #fff; color: #fff;" />
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="phone" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Phone:</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <input type="tel" class="form-control" name="phone" id="phone" required style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                                <input type="tel" class="form-control" name="phone" id="phone" required
+                                                       style="background-color: #000; border: 2px solid #fff; color: #fff;" />
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label for="message" style="font-size: 16px; font-weight: 500; padding-top: 8px;">Your Message:</label>
+                                                <label for="messageText" style="font-size: 16px; font-weight: 500; padding-top: 8px;">Your Message:</label>
                                             </div>
                                             <div class="col-md-9">
-                                                <textarea name="message" class="form-control" id="message" rows="5" required style="background-color: #000; border: 2px solid #fff; color: #fff;"></textarea>
+                                                <textarea name="message" class="form-control" id="messageText" rows="5" required
+                                                          style="background-color: #000; border: 2px solid #fff; color: #fff;"></textarea>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group" style="margin-top: 30px;">
                                         <div class="row">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" id="book-event-submit" class="btn btn-primary btn-white" style="background-color: #F22613; color: #fff; padding: 12px 30px; font-size: 16px; border: none; cursor: pointer;">Submit</button>
+                                                <button type="submit" id="book-event-submit" class="btn btn-primary btn-white"
+                                                        style="background-color: #F22613; color: #fff; padding: 12px 30px; font-size: 16px; border: none; cursor: pointer;">
+                                                    Submit
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+
                                 </form>
+                                <!-- /FORM -->
+
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-    	</section>
+        </section>
 
         <footer class="white-wrapper footer-compact">
             <div class="container-fluid">
@@ -186,15 +167,9 @@
                     </div>
                     <div class="col-md-12">
                         <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -210,24 +185,20 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/init.js"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script type="text/javascript">
-    $(document).ready(function(){
-       'use strict';
-        jQuery('#headerwrap').backstretch([
-          "assets/img/bg/bg1.jpg",
-          "assets/img/bg/bg2.jpg",
-          "assets/img/bg/bg3.jpg",
-        ], {duration: 8000, fade: 500});
-    });
+    <!-- IMPORTANT: this runs AFTER your theme scripts and prevents them from blocking Formspree -->
+    <script>
+        (function () {
+            var form = document.getElementById('bookEventForm');
+            if (!form) return;
+
+            // Capture phase = runs before typical jQuery submit handlers (which are bubble phase)
+            form.addEventListener('submit', function (e) {
+                // Stop other handlers from preventing submission
+                e.stopImmediatePropagation();
+                // Do NOT call preventDefault(); we want a normal POST to Formspree
+            }, true);
+        })();
     </script>
 
 </body>
-
 </html>
