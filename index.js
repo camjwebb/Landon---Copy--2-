@@ -1,9 +1,18 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const db = require('./db');
+const nodemailer = require('nodemailer');
 
 const app = express();
+
+// Email transporter setup
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
 const PORT = process.env.PORT || 8080;
 
 // View engine setup
@@ -43,23 +52,35 @@ app.get('/book-event', (req, res) => {
     res.render('book-event', {
         title: "Book an Event - Lando's Barbeque",
         activePage: 'book-event',
-        success: req.query.success === 'true'
+        success: req.query.success === 'true',
+        error: req.query.error === 'true'
     });
 });
 
-// API endpoint to save booking (example database usage)
-app.post('/api/bookings', async (req, res) => {
+// Handle booking form submission
+app.post('/book-event', async (req, res) => {
     const { name, email, phone, message } = req.body;
 
     try {
-        const result = await db.query(
-            'INSERT INTO bookings (name, email, phone, message, created_at) VALUES ($1, $2, $3, $4, NOW()) RETURNING id',
-            [name, email, phone, message]
-        );
-        res.json({ success: true, bookingId: result.rows[0].id });
+        // Send email to Lando's Barbeque
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: 'landosbarbeque@gmail.com',
+            subject: `New Booking Request from ${name}`,
+            html: `
+                <h2>New Booking Request</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Message:</strong></p>
+                <p>${message}</p>
+            `
+        });
+
+        res.redirect('/book-event?success=true');
     } catch (error) {
-        console.error('Error saving booking:', error);
-        res.status(500).json({ success: false, error: 'Failed to save booking' });
+        console.error('Error sending email:', error);
+        res.redirect('/book-event?error=true');
     }
 });
 

@@ -35,6 +35,18 @@
                 </div>
                 <% } %>
 
+                <% if (error) { %>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="alert alert-danger text-center" style="background-color: rgba(231, 76, 60, 0.9); border: none; color: #fff; font-size: 18px; padding: 20px;">
+                                <strong>Oops!</strong> Something went wrong. Please try again or call us directly.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
                 <!-- FORM -->
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
@@ -42,13 +54,10 @@
                             <div id="form-message" class="col-md-12"></div>
 
                             <form method="POST"
-                                  action="https://formspree.io/f/xeekkqow"
+                                  action="/book-event"
                                   id="bookEventForm"
                                   class="form-group col-md-12 wow fadeIn"
                                   data-wow-delay="0.2s">
-
-                                <!-- Formspree redirect -->
-                                <input type="hidden" name="_next" value="<%= process.env.SITE_URL || '' %>/book-event?success=true">
 
                                 <div class="form-group">
                                     <div class="row">
