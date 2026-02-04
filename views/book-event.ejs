@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body id="page-top" class="regular-navigation">
+
+    <div class="master-wrapper">
+
+        <%- include('partials/nav') %>
+
+        <!-- Book an Event -->
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="/assets/img/food/offsetfire.webp" data-speed="0.8">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center mb100" style="margin-top:90px;">
+                            <h2 class="section-heading">Book <span class="theme-accent-color">an</span> Event</h2>
+                            <hr class="thin-hr">
+                        </div>
+                    </div>
+                </div>
+
+                <% if (success) { %>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="alert alert-success text-center" style="background-color: rgba(46, 204, 113, 0.9); border: none; color: #fff; font-size: 18px; padding: 20px;">
+                                <strong>Thank you!</strong> Your booking request has been submitted. We'll be in touch soon!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+                <!-- FORM -->
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <div id="form-message" class="col-md-12"></div>
+
+                            <form method="POST"
+                                  action="https://formspree.io/f/xeekkqow"
+                                  id="bookEventForm"
+                                  class="form-group col-md-12 wow fadeIn"
+                                  data-wow-delay="0.2s">
+
+                                <!-- Formspree redirect -->
+                                <input type="hidden" name="_next" value="<%= process.env.SITE_URL || '' %>/book-event?success=true">
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="name" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Name:</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="name" id="name" required
+                                                   style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="email" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Email:</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="email" class="form-control" name="email" id="email" required
+                                                   style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="phone" style="font-size: 16px; font-weight: 500; line-height: 38px;">Your Phone:</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="tel" class="form-control" name="phone" id="phone" required
+                                                   style="background-color: #000; border: 2px solid #fff; color: #fff;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="messageText" style="font-size: 16px; font-weight: 500; padding-top: 8px;">Your Message:</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <textarea name="message" class="form-control" id="messageText" rows="5" required
+                                                      style="background-color: #000; border: 2px solid #fff; color: #fff;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-top: 30px;">
+                                    <div class="row">
+                                        <div class="col-md-9 col-md-offset-3">
+                                            <button type="submit" id="book-event-submit" class="btn btn-primary btn-white"
+                                                    style="background-color: #F22613; color: #fff; padding: 12px 30px; font-size: 16px; border: none; cursor: pointer;">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!-- /FORM -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <%- include('partials/footer') %>
+
+    </div>
+
+    <%- include('partials/scripts') %>
+
+    <script>
+        (function () {
+            var form = document.getElementById('bookEventForm');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.stopImmediatePropagation();
+            }, true);
+        })();
+    </script>
+
+</body>
+</html>

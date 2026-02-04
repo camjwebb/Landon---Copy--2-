@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body id="page-top" class="regular-navigation">
+
+    <div class="master-wrapper">
+
+        <%- include('partials/nav') %>
+
+        <!-- Header -->
+        <header id="headerwrap" class="backstretched fullheight">
+            <div class="container-fluid fullheight">
+                <div class="vertical-center row">
+                    <div class="col-sm-1 pull-left text-center slider-control match-height">
+                        <a href="#" class="prev-bs-slide vertical-center wow fadeInLeft" data-wow-delay="0.8s"><i class="fa fa-long-arrow-left"></i></a>
+                    </div>
+                    <div class="intro-text text-center smoothie col-sm-10 match-height">
+                        <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.8s"><a href="/book-event" class="logo-bounce"><img src="/assets/img/LogoFinal.png" alt="Lando's Barbeque" style="transform: scale(1.5);"></a></div>
+                    </div>
+                    <div class="col-sm-1 pull-right text-center slider-control match-height">
+                        <a href="#" class="next-bs-slide vertical-center wow fadeInRight" data-wow-delay="0.8s"><i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Happy Customers / Testimonials -->
+        <section id="reviews" class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="/assets/img/bg/bg10.jpg" data-speed="0.8">
+            <div class="section-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center mb100">
+                            <h2 class="section-heading">Our <span class="theme-accent-color">Happy</span> Customers</h2>
+                            <hr class="thin-hr">
+                            <h3 class="section-subheading secondary-font">Satisfaction, everytime.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <img src="/assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h4>Charles Davies</h4>
+                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <img src="/assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                                </div>
+                                                <div class="col-sm-10">
+                                                    <h4>Charles Davies</h4>
+                                                    <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('partials/footer') %>
+
+    </div>
+
+    <%- include('partials/scripts') %>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+       'use strict';
+        jQuery('#headerwrap').backstretch([
+          "/assets/img/bg/bg1.jpg",
+          "/assets/img/bg/bg2.jpg",
+          "/assets/img/bg/bg3.jpg",
+        ], {duration: 8000, fade: 500});
+    });
+    </script>
+
+</body>
+
+</html>

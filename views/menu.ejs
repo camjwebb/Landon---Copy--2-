@@ -2,20 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Menu - Lando's Barbeque</title>
-
-    <link rel="shortcut icon" href="assets/img/ico/favicon.ico">
-
-    <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/plugins.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <%- include('partials/head') %>
 
     <style>
         /* ===== PAGE BACKGROUND ===== */
@@ -49,28 +36,27 @@
             color: #fff !important;
         }
 
-                    /* Navbar text default */
-            .navbar-default .navbar-brand,
-            .navbar-default .navbar-nav > li > a {
+        /* Navbar text default */
+        .navbar-default .navbar-brand,
+        .navbar-default .navbar-nav > li > a {
             color: #fff !important;
-            }
+        }
 
-            /* Hover stays simple */
-            .navbar-default .navbar-nav > li > a:hover,
-            .navbar-default .navbar-nav > li > a:focus {
+        /* Hover stays simple */
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
             color: #F22613 !important;
             background: transparent !important;
-            }
+        }
 
-            /* ACTIVE — match other pages (red text + white box) */
-            .navbar-default .navbar-nav > li.active > a,
-            .navbar-default .navbar-nav > li.active > a:hover,
-            .navbar-default .navbar-nav > li.active > a:focus {
+        /* ACTIVE */
+        .navbar-default .navbar-nav > li.active > a,
+        .navbar-default .navbar-nav > li.active > a:hover,
+        .navbar-default .navbar-nav > li.active > a:focus {
             color: #F22613 !important;
             background: #fff !important;
             border-radius: 0 !important;
-
-
+        }
 
         /* Hamburger icon */
         .navbar-default .navbar-toggle {
@@ -140,18 +126,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand smoothie" href="index.html">
+                <a class="navbar-brand smoothie" href="/">
                     LANDO'S <span class="theme-accent-color">BARBEQUE</span>
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="main-navigation">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="active"><a href="menu.html">Our Menu</a></li>
-                    <li><a href="BookEvent.html">Book an Event</a></li>
-                    <!-- <li><a href="index.html#reviews">Reviews</a></li> -->
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li class="active"><a href="/menu">Our Menu</a></li>
+                    <li><a href="/book-event">Book an Event</a></li>
                 </ul>
             </div>
         </div>
@@ -206,7 +191,7 @@
                                 Carolina Style Pulled Pork<br>
                                 Sweet Pulled Pork<br>
                                 Bone-In Chicken Thighs (Mom's Favorite)<br>
-                                Cheddar Jalapeño Sausage (Made In House)<br>
+                                Cheddar Jalapeno Sausage (Made In House)<br>
                                 Pork Belly<br>
                                 Turkey Breast<br>
                                 Pork Tenderloin<br>
@@ -216,7 +201,7 @@
                             </p>
 
                             <h3>Sides</h3>
-                            <p>Coleslaw · Garden Salad · Potato Salad · Cornbread</p>
+                            <p>Coleslaw &middot; Garden Salad &middot; Potato Salad &middot; Cornbread</p>
 
                             <h3>Desserts</h3>
                             <p>Add $3 per person or replace a side for $1.50</p>
@@ -243,7 +228,7 @@
                 <!-- CTA -->
                 <div class="row mb50">
                     <div class="col-md-12 text-center">
-                        <a href="BookEvent.html" class="btn btn-primary btn-lg">Book an Event</a>
+                        <a href="/book-event" class="btn btn-primary btn-lg">Book an Event</a>
                         <p class="menu-note" style="margin-top:15px;">
                             Groups under 45 or over 150 please reach out for custom pricing.<br>
                             Call or Text <a href="tel:801-471-8715">801-471-8715</a>
@@ -260,7 +245,7 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-12">
-                    Landon Webb · 801-471-8715 · landonwebb44@gmail.com
+                    Landon Webb &middot; 801-471-8715 &middot; landonwebb44@gmail.com
                 </div>
             </div>
         </div>
@@ -268,10 +253,7 @@
 
 </div>
 
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/init.js"></script>
+<%- include('partials/scripts') %>
 
 </body>
 </html>
