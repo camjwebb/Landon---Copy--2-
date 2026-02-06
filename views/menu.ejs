@@ -4,158 +4,22 @@
 <head>
     <%- include('partials/head') %>
 
-    <style>
-        /* ===== PAGE BACKGROUND ===== */
-        body, .master-wrapper, section, .section-inner {
-            background: #fff !important;
-        }
-
-        /* ===== FORCE NAVBAR TO ALWAYS BE BLACK ===== */
-        .navbar,
-        .navbar.navbar-default,
-        .navbar.navbar-default.navbar-fixed-top,
-        .navbar.navbar-default.navbar-fixed-top.fadeInDown,
-        .navbar.transparent,
-        .navbar.navbar-transparent {
-            background: #111 !important;
-            opacity: 1 !important;
-            border: none !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
-        }
-
-        /* Kill any theme transparency */
-        .navbar:before,
-        .navbar:after {
-            display: none !important;
-            content: none !important;
-        }
-
-        /* Navbar text */
-        .navbar-default .navbar-brand,
-        .navbar-default .navbar-nav > li > a {
-            color: #fff !important;
-        }
-
-        /* Navbar text default */
-        .navbar-default .navbar-brand,
-        .navbar-default .navbar-nav > li > a {
-            color: #fff !important;
-        }
-
-        /* Hover stays simple */
-        .navbar-default .navbar-nav > li > a:hover,
-        .navbar-default .navbar-nav > li > a:focus {
-            color: #F22613 !important;
-            background: transparent !important;
-        }
-
-        /* ACTIVE */
-        .navbar-default .navbar-nav > li.active > a,
-        .navbar-default .navbar-nav > li.active > a:hover,
-        .navbar-default .navbar-nav > li.active > a:focus {
-            color: #F22613 !important;
-            background: #fff !important;
-            border-radius: 0 !important;
-        }
-
-        /* Hamburger icon */
-        .navbar-default .navbar-toggle {
-            border-color: rgba(255,255,255,0.4) !important;
-        }
-        .navbar-default .navbar-toggle .icon-bar {
-            background-color: #fff !important;
-        }
-
-        /* Mobile dropdown background */
-        .navbar-default .navbar-collapse {
-            background: #111 !important;
-            border-color: rgba(255,255,255,0.15) !important;
-        }
-
-        /* Remove navbar animation fade */
-        .fadeInDown {
-            animation: none !important;
-            -webkit-animation: none !important;
-        }
-
-        /* ===== MENU LAYOUT ===== */
-        .menu-box {
-            border: 1px solid rgba(0,0,0,0.08);
-            padding: 25px;
-            border-radius: 6px;
-            background: #fff;
-            margin-bottom: 30px;
-        }
-
-        .menu-note {
-            font-size: 16px;
-            opacity: 0.85;
-        }
-
-        /* Wide layout so 4 columns breathe */
-        .menu-wide {
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        @media (min-width: 1200px) {
-            .menu-wide {
-                padding-left: 90px;
-                padding-right: 90px;
-            }
-        }
-
-        /* Push content below fixed navbar */
-        .page-offset {
-            margin-top: 110px;
-        }
-    </style>
+    <!-- page-specific styles removed; header/nav controlled by partial -->
 
 </head>
 
 <body id="page-top" class="regular-navigation">
 
 <div class="master-wrapper">
-
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand smoothie" href="/">
-                    LANDO'S <span class="theme-accent-color">BARBEQUE</span>
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="main-navigation">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li class="active"><a href="/menu">Our Menu</a></li>
-                    <li><a href="/book-event">Book an Event</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
+    <%- include('partials/nav') %>
+    
 
     <!-- MENU SECTION -->
     <section class="white-wrapper">
         <div class="section-inner">
             <div class="container-fluid menu-wide">
 
-                <!-- HEADER -->
-                <div class="row">
-                    <div class="col-lg-12 text-center mb50 page-offset">
-                        <h2 class="section-heading">
-                            Catering <span class="theme-accent-color">Menu</span>
-                        </h2>
-                        <hr class="thin-hr">
-                    </div>
-                </div>
 
                 <!-- FOUR COLUMNS -->
                 <div class="row mb50">
@@ -240,16 +104,8 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="white-wrapper footer-compact">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    Landon Webb &middot; 801-471-8715 &middot; landonwebb44@gmail.com
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER (use the partial, NOT a custom footer here) -->
+    <%- include('partials/footer') %>
 
 </div>
 

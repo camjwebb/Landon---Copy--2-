@@ -459,8 +459,11 @@ fieldset[disabled] .btn-primary.active {
 /*-----------------------------------------------------------------------------------*/
 
 .navbar-default {
-    border-color: transparent;
-    background-color: #fcfcfc;
+    border-color: none;
+    background-color: #111; /* match menu page header */
+    opacity: 1;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
 .navbar-default .navbar-brand {
@@ -547,7 +550,8 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
-    color: #fff;
+    color: #F22613;
+    background: transparent;
 }
 
 
@@ -1030,6 +1034,16 @@ section h3.section-subheading {
 footer.white-wrapper {
     padding: 60px 0;
     clear: both;
+    background-color: #222; /* ensure footer has its own dark background */
+    display: block;
+    box-sizing: border-box;
+    /* stretch full viewport width even when inside a constrained container */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 footer.white-wrapper *, footer.white-wrapper a {
@@ -1056,9 +1070,9 @@ footer.white-wrapper .social-links li a {
     font-size: 26px;
 }
 
-/* Compact footer variant (about 1/4 height) */
+/* Compact footer variant (shorter height) */
 footer.white-wrapper.footer-compact {
-    padding: 15px 0;
+    padding: 12px 0;
 }
 
 footer.white-wrapper.footer-compact .mb30 {
@@ -1082,6 +1096,43 @@ footer.white-wrapper.footer-compact .social-links li a {
 .widget-title {
     margin-bottom: 30px;
 }
+/* Make compact footer readable */
+footer.white-wrapper.footer-compact {
+    padding: 12px 0;            /* slightly shorter */
+}
+
+footer.white-wrapper.footer-compact .container-fluid {
+    padding-left: 20px;         /* prevent edge clipping */
+    padding-right: 20px;
+}
+
+footer.white-wrapper.footer-compact span.copyright {
+    line-height: 1.5;           /* better wrap + readability */
+    padding: 6px 0;             /* breathing room */
+    font-size: 13px;            /* slightly bigger */
+    white-space: normal;        /* allow wrap */
+    word-break: break-word;     /* prevents overflow */
+}
+
+/* Make links easier to tap/read without crowding */
+footer.white-wrapper.footer-compact a {
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+/* Extra help for small phones */
+@media (max-width: 480px) {
+    footer.white-wrapper.footer-compact .container-fluid {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    footer.white-wrapper.footer-compact span.copyright {
+        font-size: 12.5px;
+    }
+}
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  12 - CAROUSEL STYLES
@@ -1680,8 +1731,8 @@ footer.white-wrapper.footer-compact .social-links li a {
         position: relative;
         margin-bottom: 0;
      }
-     .navbar-default .navbar-brand, .navbar-default .nav li a {
-        color: #222;
+      .navbar-default .navbar-brand, .navbar-default .nav li a {
+          color: #fff;
      }
      .navbar-default .navbar-brand {
         margin-top: 2px;
@@ -1698,8 +1749,8 @@ footer.white-wrapper.footer-compact .social-links li a {
      #navbar-social, #header-scroll-wrapper {
         display: none;
      }
-     .navbar-default .navbar-toggle .icon-bar {
-        background-color: #222;
+      .navbar-default .navbar-toggle .icon-bar {
+          background-color: #fff;
      }
      .pad-sides-60 {
         padding-left: 10px !important;
@@ -2121,3 +2172,13 @@ a#back-to-top.show {
     transform: translateY(-10px);
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
 }
+@media(min-width:768px) {
+  .navbar-default { background-color: transparent; }
+}
+@media (min-width: 768px) {
+  .navbar-default {
+    background-color: #111 !important;
+    opacity: 1 !important;
+  }
+}
+
